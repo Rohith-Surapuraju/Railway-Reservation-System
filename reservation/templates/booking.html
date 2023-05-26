@@ -1,0 +1,55 @@
+{% extends './base.html' %}
+{% block content %}
+
+<div class="container" style="display: flex;align-items: center;justify-content: center;margin-top: 50px;">
+    <div class='jumbotron' style='width: 100%; '>
+
+        <center>
+            <div style="margin-bottom: 40px;">
+                <h1>Welcome {{request.user.username}} !</h1>
+            </div>
+        </center>
+
+        <form method='POST' action='/book/'>
+            {% csrf_token %}
+
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="source">Source</label>
+                <div class='col-sm-10'>
+
+                    <select class="form-control" id="source" name="source" required>
+                        {%for t in sources%}
+                        <option value={{t}}>{{t}}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="destination">Destination</label>
+                <div class='col-sm-10'>
+                  
+                    <select class="form-control" id="destination" name="destination" required>
+                        {%for t in destinations%}
+                        <option value={{t}}>{{t}}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class='form-label col-sm-2' for="date" required>Date</label>
+                <div class='col-sm-10'>
+                   <input type="date" id="date" name="date" />
+                </div>
+            </div>
+
+            <center><input type="submit" class="btn btn-success" value='Search'></center>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
