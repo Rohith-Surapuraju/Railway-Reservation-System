@@ -1,4 +1,4 @@
-# Railway-Rservation-System
+# Railway-Reservation-System
 Web application for handling train tickets reservation online using Django. Facilitating the customers for booking the trains of their choice. The client can register as a user under their name and reserve the train they want to travel from one place to another.
 
 This is a web page designed using Django to manage train bookings and related information. This website contains features for logging in and registering if you are a new user. Users can login into the website and search for trains from a particular source to destination on a preferred day. All the list of trains available will be shown to the user. User can book a train of his choice from the list of available trains. Users will be prompted to fill details and pay. They can check their booking history as well. Meanwhile Admin can add or delete new trains from the admin login. Admin can also manage the complete database and provide changes if necessary.
