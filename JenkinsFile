@@ -27,6 +27,7 @@ pipeline {
                     mkdir Test
                     cd Test
                     echo Rohith > text.txt
+                    cd ..
                     git add .
                     git config --global user.email "rohithsurapuraju@gmail.com"
                     git config --global user.name "Rohith-Surapuraju"
