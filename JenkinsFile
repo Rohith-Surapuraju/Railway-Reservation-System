@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage("Development"){
+            steps {
+                echo "Hello World - QA"
+                bat'''
+                    cd ..
+                    cd secondjob
+                    git clone https://github.com/Rohith-Surapuraju/Railway-Reservation-System.git'''
+            }
+        }
+        stage("QA"){
+            steps {
+                echo "Hello World - QA"
+                bat'''
+                    echo third job
+                    cd ..
+                    cd secondjob
+                    cd Railway-Reservation-System
+                    mkdir Test
+                    cd Test
+                    echo Rohith > text.txt
+                    git add .
+                    git config --global user.email "rohithsurapuraju@gmail.com"
+                    git config --global user.name "Rohith-Surapuraju"
+                    git commit -m "Pushing newdir from jenkins"
+                    git push https://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@github.com/Rohith-Surapuraju/Railway-Reservation-System.git'''
+            }
+        }
+    }
+}
